@@ -23,7 +23,15 @@ namespace BakeryWholesale.Tests
       Order newOrder = new Order (title, "Bread, 5 loaves", 15, "5/1/22" );
       Assert.AreEqual(title, newOrder.Title);
       
-
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      List<Order> newList = new List<Order> { };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
+
   }
 }
