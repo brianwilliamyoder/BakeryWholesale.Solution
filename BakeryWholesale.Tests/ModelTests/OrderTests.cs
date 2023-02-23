@@ -37,6 +37,16 @@ namespace BakeryWholesale.Tests
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
-
+  
+    [TestMethod]
+    public void GetAll_ReturnsOrderList_OrderList()
+    {
+      Order newOrder1 = new Order("April Order", "Pastries", 300, "4/1/22");
+      Order newOrder2 = new Order("March Order", "Bread", 5, "3/1/22");
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 }; 
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(result, newList);
+      
+    }
   }
 }
