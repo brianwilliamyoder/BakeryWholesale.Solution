@@ -12,7 +12,7 @@ namespace BakeryWholesale.Tests
     [TestMethod]
     public void OrderConstructor_CreateInstanceOfOrder_Order()
     {
-      Order newOrder = new Order();
+      Order newOrder = new Order("May order", "5 loaves", 15, "5/1/22");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
