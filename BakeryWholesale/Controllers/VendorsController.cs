@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using BakeryWholesale.Models;
 
 namespace BakeryWholesale.Controllers
-
 {
+
   public class VendorsController : Controller
   {
     [HttpGet("/vendors")]
@@ -29,7 +29,7 @@ namespace BakeryWholesale.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpGet("/categories/{id}")]
+    [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
@@ -39,5 +39,21 @@ namespace BakeryWholesale.Controllers
       model.Add("orders", vendorOrders);
       return View(model);
     }
+
+    [HttpPost("/categories/{vendorId}/items")]
+    public ActionResult Create(int vendorId, string orderTitle, string description, string price, string date)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(orderTitle, description, price, date);
+      foundVendor.AddOrder(newOrder);
+      List<Order> vendorOrders = foundVendor.Orders;
+      model.Add("orders", vendorOrders);
+      model.Add("vendor", foundVendor);
+      return View("Show", model);
+
+    }
+
+    
   }
 }
