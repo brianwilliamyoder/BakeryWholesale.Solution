@@ -56,5 +56,14 @@ namespace BakeryWholesale.Tests
       int comparison = 1;
       Assert.AreEqual(comparison, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsOrder_Order()
+    {
+      Order newOrder1 = new Order("April Order", "Pastries", 300, "4/1/22");
+      Order newOrder2 = new Order("March Order", "Bread", 5, "3/1/22");
+      Order result = newOrder1;
+      Assert.AreEqual(newOrder1, newOrder2);
+    }
   }
 }
