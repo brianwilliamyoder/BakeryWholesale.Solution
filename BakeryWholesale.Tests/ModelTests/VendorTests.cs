@@ -15,6 +15,16 @@ namespace BakeryWholesale.Tests
       Vendor newVendor = new Vendor("test Vendor", "new client");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
+
+    [TestMethod]
+    public void GetDescription_ReturnsDescription()
+    {
+      string description = "coffee shop";
+      Vendor newVendor = new Vendor("Ronnie's", description);
+      string result = newVendor.Description;
+      Assert.AreEqual(result, description);
+
+    }
     
   }
 
