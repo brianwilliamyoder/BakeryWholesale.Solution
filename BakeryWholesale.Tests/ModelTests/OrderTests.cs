@@ -46,7 +46,14 @@ namespace BakeryWholesale.Tests
       List<Order> newList = new List<Order> { newOrder1, newOrder2 }; 
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(result, newList);
-      
+    }
+
+    [TestMethod]
+    public void GetId_ItemAssignedId_Int()
+    {
+      Order newOrder1 = new Order("April Order", "Pastries", 300, "4/1/22");
+      int result = 0;
+      CollectionAssert.AreEqual(1, result);
     }
   }
 }
