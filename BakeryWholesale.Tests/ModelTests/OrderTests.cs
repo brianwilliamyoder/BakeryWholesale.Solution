@@ -62,8 +62,8 @@ namespace BakeryWholesale.Tests
     {
       Order newOrder1 = new Order("April Order", "Pastries", 300, "4/1/22");
       Order newOrder2 = new Order("March Order", "Bread", 5, "3/1/22");
-      Order result = newOrder1;
-      Assert.AreEqual(newOrder1, newOrder2);
+      Order result = Order.Find(2);
+      Assert.AreEqual(result, newOrder2);
     }
   }
 }
