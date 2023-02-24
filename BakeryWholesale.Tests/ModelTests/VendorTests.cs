@@ -6,11 +6,14 @@ using System.Collections.Generic;
 
 namespace BakeryWholesale.Tests
 {
-  public class Vendor
+  [TestClass]
+  public class VendorTests
   {
-    private static List<Vendor> _instances = new List<Vendor> { };
-    public string Name { get; set; }
-    public int Id { get; }
-    public List<Order> Orders { get; set; }
+    [TestMethod]
+    public void VendorConstructor_CreateInstanceOfVendor_Vendor()
+    {
+      Vendor newVendor = new Vendor("test Vendor");
+      Assert.AreEqual(typeof(Vendor)newVendor.GetType());
+    }
+    
   }
-}
