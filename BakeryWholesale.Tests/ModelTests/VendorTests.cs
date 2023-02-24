@@ -14,7 +14,7 @@ namespace BakeryWholesale.Tests
     {
       Vendor.ClearAll();
     }
-    
+
     [TestMethod]
     public void VendorConstructor_CreateInstanceOfVendor_Vendor()
     {
@@ -37,6 +37,16 @@ namespace BakeryWholesale.Tests
       Vendor newVendor = new Vendor("test Vendor", "new client");
       int result = newVendor.Id;
       Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsVendorList_VendorList()
+    {
+      Vendor newVendor1 = new Vendor("test Vendor", "new client");
+      Vendor newVendor2 = new Vendor("test Vendor", "new client");
+      List<Vendor> vendorList = new List<Vendor> { newVendor1, newVendor2 };
+      List<Vendor> result = Vendor.GetAll();
+      CollectionAssert.AreEqual(vendorList, result);
     }
   }
 
