@@ -11,6 +11,7 @@
 * C#
 * MSTest
 * ASP.NET
+* Razor 
 
 ## Setup/Installation Requirements
 
