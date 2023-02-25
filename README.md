@@ -10,6 +10,7 @@
 * VSCode v. 1.72.2
 * C#
 * MSTest
+* ASP.NET
 
 ## Setup/Installation Requirements
 
