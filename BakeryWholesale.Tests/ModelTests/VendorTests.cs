@@ -69,6 +69,15 @@ namespace BakeryWholesale.Tests
       CollectionAssert.AreEqual(newList, newVendor.Orders);
     }
 
+    [TestMethod]
+    public void ClearAll_ClearOrderList_List()
+    {
+      Vendor newVendor = new Vendor("Roy's", "Diner");
+      List<Vendor> emptyList = new List<Vendor> {};
+      List<Vendor> newList = Vendor.GetAll();
+      CollectionAssert.AreEqual(emptyList, newList);
+    }
+
   }
 
 }
