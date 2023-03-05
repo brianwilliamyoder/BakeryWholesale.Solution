@@ -57,6 +57,18 @@ namespace BakeryWholesale.Tests
       Vendor result = Vendor.Find(1);
       Assert.AreEqual(result, newVendor1);
     }
+
+    [TestMethod]
+    public void AddOrder_AddOrderToInstances_List()
+    {
+      DateTime date = new DateTime(2011, 1, 1);
+      Order newOrder = new Order("may order", "pastries", 110, date);
+      Vendor newVendor = new Vendor("Roy's", "Diner");
+      List<Order> newList = new List<Order> { };
+      newVendor.AddOrder(newOrder);
+      CollectionAssert.AreEqual(newList, newVendor.Orders);
+    }
+
   }
 
 }
