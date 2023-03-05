@@ -74,6 +74,7 @@ namespace BakeryWholesale.Tests
     {
       Vendor newVendor = new Vendor("Roy's", "Diner");
       List<Vendor> emptyList = new List<Vendor> {};
+      Vendor.ClearAll();
       List<Vendor> newList = Vendor.GetAll();
       CollectionAssert.AreEqual(emptyList, newList);
     }
